@@ -17,7 +17,7 @@ make consul_apply
 make consul_config_2
 
 make consul_apply_2 <-- fail no terrraform_remote_state value
-```terraform_remote_state.consul: Creating...
+``terraform_remote_state.consul: Creating...
   backend:        "" => "consul"
   config.#:       "" => "2"
   config.address: "" => "docker:8500"
@@ -35,4 +35,4 @@ Instead, your Terraform state file has been partially updated with
 any resources that successfully completed. Please address the error
 above and apply again to incrementally change your infrastructure.
 make: *** [consul_apply_2] Error 1
-```
+``
