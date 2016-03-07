@@ -16,4 +16,23 @@ make consul_apply
 
 make consul_config_2
 
-make consul_apply <-- fail no terrraform_remote_state value
+make consul_apply_2 <-- fail no terrraform_remote_state value
+```terraform_remote_state.consul: Creating...
+  backend:        "" => "consul"
+  config.#:       "" => "2"
+  config.address: "" => "docker:8500"
+  config.path:    "" => "path=aa"
+  output.#:       "" => "<computed>"
+terraform_remote_state.consul: Creation complete
+Error applying plan:
+
+1 error(s) occurred:
+
+* Resource 'terraform_remote_state.consul' does not have attribute 'output.testname' for variable 'terraform_remote_state.consul.output.testname'
+
+Terraform does not automatically rollback in the face of errors.
+Instead, your Terraform state file has been partially updated with
+any resources that successfully completed. Please address the error
+above and apply again to incrementally change your infrastructure.
+make: *** [consul_apply_2] Error 1
+```
